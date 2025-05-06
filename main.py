@@ -1,3 +1,5 @@
+print("=== 🚀 main.pyが動き始めました ===")
+
 import os, datetime, openai
 from googleapiclient.discovery import build
 from youtube_transcript_api import YouTubeTranscriptApi
