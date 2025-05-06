@@ -1,17 +1,33 @@
 name: youtube-summary
+
 on:
   schedule:
     - cron: '0 9 * * *'      # 日本時間 18:00
   workflow_dispatch:
+
 jobs:
   run:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: { python-version: '3.11' }
-      - run: pip install -r requirements.txt
-      - run: python main.py
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Show repository structure
+        run: |
+          pwd
+          ls -R .
+
+      - name: Run main.py
+        run: python main.py
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           NOTION_TOKEN:   ${{ secrets.NOTION_TOKEN }}
@@ -19,4 +35,3 @@ jobs:
           YT_API_KEY:     ${{ secrets.YT_API_KEY }}
           CHANNEL_IDS:    ${{ secrets.CHANNEL_IDS }}
           TZ:             ${{ secrets.TZ }}
-
