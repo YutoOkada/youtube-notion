@@ -3,4 +3,3 @@ youtube_transcript_api==1.0.3     # 2025‑03‑25 最新 :contentReference[oaic
 notion-client==2.2.1
 openai==1.23.0
 python-dotenv
-pytz
