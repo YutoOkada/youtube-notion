@@ -35,3 +35,5 @@ jobs:
           YT_API_KEY:     ${{ secrets.YT_API_KEY }}
           CHANNEL_IDS:    ${{ secrets.CHANNEL_IDS }}
           TZ:             ${{ secrets.TZ }}
+          PROXY_URL:      ${{ secrets.PROXY_URL }}
+          
