@@ -94,7 +94,12 @@ def main():
     summary = summarize(transcript, title)
     # 6. Notion に追加
     add_to_notion(title, summary, url)
-    print(f"✅
+    # 7. 成功ログ
+    print(f"✅ Added to Notion: {title}")
+
+if __name__ == "__main__":
+    main()
+
 
 
 
