@@ -5,6 +5,7 @@ from youtube_transcript_api import YouTubeTranscriptApi
 from googleapiclient.discovery import build
 from notion_client import Client as NotionClient
 import openai
+import pytz
 
 # ── 環境変数 ──
 YOUTUBE_API_KEY    = os.getenv("YOUTUBE_API_KEY")
